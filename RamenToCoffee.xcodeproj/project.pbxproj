@@ -6,6 +6,17 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		4775C34E2D4F61CB00C573DF /* CodableWrappers in Frameworks */ = {isa = PBXBuildFile; productRef = 4775C34D2D4F61CB00C573DF /* CodableWrappers */; };
+		4775C3512D4F61ED00C573DF /* LetterCase in Frameworks */ = {isa = PBXBuildFile; productRef = 4775C3502D4F61ED00C573DF /* LetterCase */; };
+		4775C3542D4F620900C573DF /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 4775C3532D4F620900C573DF /* Algorithms */; };
+		4775C3572D4F632200C573DF /* BitCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 4775C3562D4F632200C573DF /* BitCollections */; };
+		4775C3592D4F632200C573DF /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 4775C3582D4F632200C573DF /* Collections */; };
+		4775C35B2D4F632200C573DF /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 4775C35A2D4F632200C573DF /* DequeModule */; };
+		4775C35D2D4F632200C573DF /* HashTreeCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 4775C35C2D4F632200C573DF /* HashTreeCollections */; };
+		4775C35F2D4F632200C573DF /* HeapModule in Frameworks */ = {isa = PBXBuildFile; productRef = 4775C35E2D4F632200C573DF /* HeapModule */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		4775C31F2D4506F500C573DF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +63,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4775C3572D4F632200C573DF /* BitCollections in Frameworks */,
+				4775C3542D4F620900C573DF /* Algorithms in Frameworks */,
+				4775C3592D4F632200C573DF /* Collections in Frameworks */,
+				4775C35D2D4F632200C573DF /* HashTreeCollections in Frameworks */,
+				4775C3512D4F61ED00C573DF /* LetterCase in Frameworks */,
+				4775C34E2D4F61CB00C573DF /* CodableWrappers in Frameworks */,
+				4775C35F2D4F632200C573DF /* HeapModule in Frameworks */,
+				4775C35B2D4F632200C573DF /* DequeModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +131,14 @@
 			);
 			name = RamenToCoffee;
 			packageProductDependencies = (
+				4775C34D2D4F61CB00C573DF /* CodableWrappers */,
+				4775C3502D4F61ED00C573DF /* LetterCase */,
+				4775C3532D4F620900C573DF /* Algorithms */,
+				4775C3562D4F632200C573DF /* BitCollections */,
+				4775C3582D4F632200C573DF /* Collections */,
+				4775C35A2D4F632200C573DF /* DequeModule */,
+				4775C35C2D4F632200C573DF /* HashTreeCollections */,
+				4775C35E2D4F632200C573DF /* HeapModule */,
 			);
 			productName = RamenToCoffee;
 			productReference = 4775C30E2D4506F400C573DF /* RamenToCoffee.app */;
@@ -195,6 +222,12 @@
 			);
 			mainGroup = 4775C3052D4506F400C573DF;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				4775C34C2D4F61CB00C573DF /* XCRemoteSwiftPackageReference "CodableWrappers" */,
+				4775C34F2D4F61ED00C573DF /* XCRemoteSwiftPackageReference "LetterCase" */,
+				4775C3522D4F620900C573DF /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				4775C3552D4F632200C573DF /* XCRemoteSwiftPackageReference "swift-collections" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4775C30F2D4506F400C573DF /* Products */;
 			projectDirPath = "";
@@ -558,6 +591,84 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4775C34C2D4F61CB00C573DF /* XCRemoteSwiftPackageReference "CodableWrappers" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GottaGetSwifty/CodableWrappers.git";
+			requirement = {
+				kind = exactVersion;
+				version = 3.1.0;
+			};
+		};
+		4775C34F2D4F61ED00C573DF /* XCRemoteSwiftPackageReference "LetterCase" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rwbutler/LetterCase.git";
+			requirement = {
+				kind = exactVersion;
+				version = 2.0.0;
+			};
+		};
+		4775C3522D4F620900C573DF /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.2.0;
+			};
+		};
+		4775C3552D4F632200C573DF /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.1.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4775C34D2D4F61CB00C573DF /* CodableWrappers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4775C34C2D4F61CB00C573DF /* XCRemoteSwiftPackageReference "CodableWrappers" */;
+			productName = CodableWrappers;
+		};
+		4775C3502D4F61ED00C573DF /* LetterCase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4775C34F2D4F61ED00C573DF /* XCRemoteSwiftPackageReference "LetterCase" */;
+			productName = LetterCase;
+		};
+		4775C3532D4F620900C573DF /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4775C3522D4F620900C573DF /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+		4775C3562D4F632200C573DF /* BitCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4775C3552D4F632200C573DF /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = BitCollections;
+		};
+		4775C3582D4F632200C573DF /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4775C3552D4F632200C573DF /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		4775C35A2D4F632200C573DF /* DequeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4775C3552D4F632200C573DF /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = DequeModule;
+		};
+		4775C35C2D4F632200C573DF /* HashTreeCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4775C3552D4F632200C573DF /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = HashTreeCollections;
+		};
+		4775C35E2D4F632200C573DF /* HeapModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4775C3552D4F632200C573DF /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = HeapModule;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4775C3062D4506F400C573DF /* Project object */;
 }
