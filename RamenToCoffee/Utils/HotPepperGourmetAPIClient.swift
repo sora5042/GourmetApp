@@ -5,6 +5,7 @@
 //  Created by Sora Oya on 2025/02/02.
 //
 
+import API
 import Foundation
 
 struct HotPepperGourmetAPIClient: APIClient {
@@ -25,7 +26,7 @@ struct HotPepperGourmetAPIClient: APIClient {
     func data(path: String? = nil, parameters: Parameters? = nil) async throws -> Data {
         let dictionary = try (parameters?.convertToDictionary() ?? [:]) + (key.convertToDictionary())
 
-        var request = urlRequest(path: path, parameters: dictionary)
+        let request = urlRequest(path: path, parameters: dictionary)
         logger.debug([
             "URL: \(baseURL) \(path ?? "")",
             "Params: \(String(describing: parameters))"

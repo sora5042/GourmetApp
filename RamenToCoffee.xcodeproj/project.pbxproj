@@ -15,6 +15,13 @@
 		4775C35B2D4F632200C573DF /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 4775C35A2D4F632200C573DF /* DequeModule */; };
 		4775C35D2D4F632200C573DF /* HashTreeCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 4775C35C2D4F632200C573DF /* HashTreeCollections */; };
 		4775C35F2D4F632200C573DF /* HeapModule in Frameworks */ = {isa = PBXBuildFile; productRef = 4775C35E2D4F632200C573DF /* HeapModule */; };
+		4775C39A2D52144A00C573DF /* API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4775C3902D52144A00C573DF /* API.framework */; };
+		4775C3A52D52144A00C573DF /* API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4775C3902D52144A00C573DF /* API.framework */; };
+		4775C3A62D52144A00C573DF /* API.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4775C3902D52144A00C573DF /* API.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4775C3B12D52146C00C573DF /* CodableWrappers in Frameworks */ = {isa = PBXBuildFile; productRef = 4775C3B02D52146C00C573DF /* CodableWrappers */; };
+		4775C3B32D52147000C573DF /* LetterCase in Frameworks */ = {isa = PBXBuildFile; productRef = 4775C3B22D52147000C573DF /* LetterCase */; };
+		4775C3B52D52147400C573DF /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 4775C3B42D52147400C573DF /* Algorithms */; };
+		4775C3B72D52148700C573DF /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 4775C3B62D52148700C573DF /* Collections */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,13 +39,74 @@
 			remoteGlobalIDString = 4775C30D2D4506F400C573DF;
 			remoteInfo = RamenToCoffee;
 		};
+		4775C39B2D52144A00C573DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4775C3062D4506F400C573DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4775C38F2D52144A00C573DF;
+			remoteInfo = API;
+		};
+		4775C39D2D52144A00C573DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4775C3062D4506F400C573DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4775C30D2D4506F400C573DF;
+			remoteInfo = RamenToCoffee;
+		};
+		4775C3A32D52144A00C573DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4775C3062D4506F400C573DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4775C38F2D52144A00C573DF;
+			remoteInfo = API;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4775C3AB2D52144A00C573DF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4775C3A62D52144A00C573DF /* API.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4775C30E2D4506F400C573DF /* RamenToCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RamenToCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4775C31E2D4506F500C573DF /* RamenToCoffeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RamenToCoffeeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4775C3282D4506F500C573DF /* RamenToCoffeeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RamenToCoffeeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4775C3902D52144A00C573DF /* API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4775C3992D52144A00C573DF /* APITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		4775C3A72D52144A00C573DF /* Exceptions for "API" folder in "API" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			publicHeaders = (
+				API.h,
+			);
+			target = 4775C38F2D52144A00C573DF /* API */;
+		};
+		4775C3C92D5215FA00C573DF /* Exceptions for "APITests" folder in "API" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				APITests.swift,
+			);
+			target = 4775C38F2D52144A00C573DF /* API */;
+		};
+		4775C3CA2D5215FA00C573DF /* Exceptions for "APITests" folder in "APITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				APITests.swift,
+			);
+			target = 4775C3982D52144A00C573DF /* APITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		4775C3102D4506F400C573DF /* RamenToCoffee */ = {
@@ -56,6 +124,23 @@
 			path = RamenToCoffeeUITests;
 			sourceTree = "<group>";
 		};
+		4775C3912D52144A00C573DF /* API */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				4775C3A72D52144A00C573DF /* Exceptions for "API" folder in "API" target */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		4775C3C72D5215FA00C573DF /* APITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				4775C3C92D5215FA00C573DF /* Exceptions for "APITests" folder in "API" target */,
+				4775C3CA2D5215FA00C573DF /* Exceptions for "APITests" folder in "APITests" target */,
+			);
+			path = APITests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4775C3572D4F632200C573DF /* BitCollections in Frameworks */,
+				4775C3A52D52144A00C573DF /* API.framework in Frameworks */,
 				4775C3542D4F620900C573DF /* Algorithms in Frameworks */,
 				4775C3592D4F632200C573DF /* Collections in Frameworks */,
 				4775C35D2D4F632200C573DF /* HashTreeCollections in Frameworks */,
@@ -88,15 +174,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4775C38D2D52144A00C573DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4775C3B52D52147400C573DF /* Algorithms in Frameworks */,
+				4775C3B32D52147000C573DF /* LetterCase in Frameworks */,
+				4775C3B72D52148700C573DF /* Collections in Frameworks */,
+				4775C3B12D52146C00C573DF /* CodableWrappers in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4775C3962D52144A00C573DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4775C39A2D52144A00C573DF /* API.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		4775C3052D4506F400C573DF = {
 			isa = PBXGroup;
 			children = (
+				4775C3912D52144A00C573DF /* API */,
+				4775C3C72D5215FA00C573DF /* APITests */,
 				4775C3102D4506F400C573DF /* RamenToCoffee */,
 				4775C3212D4506F500C573DF /* RamenToCoffeeTests */,
 				4775C32B2D4506F500C573DF /* RamenToCoffeeUITests */,
+				4775C3AF2D52146C00C573DF /* Frameworks */,
 				4775C30F2D4506F400C573DF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -107,11 +215,30 @@
 				4775C30E2D4506F400C573DF /* RamenToCoffee.app */,
 				4775C31E2D4506F500C573DF /* RamenToCoffeeTests.xctest */,
 				4775C3282D4506F500C573DF /* RamenToCoffeeUITests.xctest */,
+				4775C3902D52144A00C573DF /* API.framework */,
+				4775C3992D52144A00C573DF /* APITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
+		4775C3AF2D52146C00C573DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4775C38B2D52144A00C573DF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		4775C30D2D4506F400C573DF /* RamenToCoffee */ = {
@@ -121,10 +248,12 @@
 				4775C30A2D4506F400C573DF /* Sources */,
 				4775C30B2D4506F400C573DF /* Frameworks */,
 				4775C30C2D4506F400C573DF /* Resources */,
+				4775C3AB2D52144A00C573DF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4775C3A42D52144A00C573DF /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				4775C3102D4506F400C573DF /* RamenToCoffee */,
@@ -190,6 +319,55 @@
 			productReference = 4775C3282D4506F500C573DF /* RamenToCoffeeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		4775C38F2D52144A00C573DF /* API */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4775C3A82D52144A00C573DF /* Build configuration list for PBXNativeTarget "API" */;
+			buildPhases = (
+				4775C38B2D52144A00C573DF /* Headers */,
+				4775C38C2D52144A00C573DF /* Sources */,
+				4775C38D2D52144A00C573DF /* Frameworks */,
+				4775C38E2D52144A00C573DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				4775C3912D52144A00C573DF /* API */,
+				4775C3C72D5215FA00C573DF /* APITests */,
+			);
+			name = API;
+			packageProductDependencies = (
+				4775C3B02D52146C00C573DF /* CodableWrappers */,
+				4775C3B22D52147000C573DF /* LetterCase */,
+				4775C3B42D52147400C573DF /* Algorithms */,
+				4775C3B62D52148700C573DF /* Collections */,
+			);
+			productName = API;
+			productReference = 4775C3902D52144A00C573DF /* API.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4775C3982D52144A00C573DF /* APITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4775C3AC2D52144A00C573DF /* Build configuration list for PBXNativeTarget "APITests" */;
+			buildPhases = (
+				4775C3952D52144A00C573DF /* Sources */,
+				4775C3962D52144A00C573DF /* Frameworks */,
+				4775C3972D52144A00C573DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4775C39C2D52144A00C573DF /* PBXTargetDependency */,
+				4775C39E2D52144A00C573DF /* PBXTargetDependency */,
+			);
+			name = APITests;
+			packageProductDependencies = (
+			);
+			productName = APITests;
+			productReference = 4775C3992D52144A00C573DF /* APITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -208,6 +386,13 @@
 						TestTargetID = 4775C30D2D4506F400C573DF;
 					};
 					4775C3272D4506F500C573DF = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 4775C30D2D4506F400C573DF;
+					};
+					4775C38F2D52144A00C573DF = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					4775C3982D52144A00C573DF = {
 						CreatedOnToolsVersion = 16.2;
 						TestTargetID = 4775C30D2D4506F400C573DF;
 					};
@@ -236,6 +421,8 @@
 				4775C30D2D4506F400C573DF /* RamenToCoffee */,
 				4775C31D2D4506F500C573DF /* RamenToCoffeeTests */,
 				4775C3272D4506F500C573DF /* RamenToCoffeeUITests */,
+				4775C38F2D52144A00C573DF /* API */,
+				4775C3982D52144A00C573DF /* APITests */,
 			);
 		};
 /* End PBXProject section */
@@ -256,6 +443,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4775C3262D4506F500C573DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4775C38E2D52144A00C573DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4775C3972D52144A00C573DF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -286,6 +487,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4775C38C2D52144A00C573DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4775C3952D52144A00C573DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -298,6 +513,21 @@
 			isa = PBXTargetDependency;
 			target = 4775C30D2D4506F400C573DF /* RamenToCoffee */;
 			targetProxy = 4775C3292D4506F500C573DF /* PBXContainerItemProxy */;
+		};
+		4775C39C2D52144A00C573DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4775C38F2D52144A00C573DF /* API */;
+			targetProxy = 4775C39B2D52144A00C573DF /* PBXContainerItemProxy */;
+		};
+		4775C39E2D52144A00C573DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4775C30D2D4506F400C573DF /* RamenToCoffee */;
+			targetProxy = 4775C39D2D52144A00C573DF /* PBXContainerItemProxy */;
+		};
+		4775C3A42D52144A00C573DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4775C38F2D52144A00C573DF /* API */;
+			targetProxy = 4775C3A32D52144A00C573DF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -551,6 +781,110 @@
 			};
 			name = Release;
 		};
+		4775C3A92D52144A00C573DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = L6Q4H7M3DB;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.ooyasora.API;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4775C3AA2D52144A00C573DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = L6Q4H7M3DB;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.ooyasora.API;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4775C3AD2D52144A00C573DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L6Q4H7M3DB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.ooyasora.APITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RamenToCoffee.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RamenToCoffee";
+			};
+			name = Debug;
+		};
+		4775C3AE2D52144A00C573DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L6Q4H7M3DB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.ooyasora.APITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RamenToCoffee.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RamenToCoffee";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -586,6 +920,24 @@
 			buildConfigurations = (
 				4775C3392D4506F500C573DF /* Debug */,
 				4775C33A2D4506F500C573DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4775C3A82D52144A00C573DF /* Build configuration list for PBXNativeTarget "API" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4775C3A92D52144A00C573DF /* Debug */,
+				4775C3AA2D52144A00C573DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4775C3AC2D52144A00C573DF /* Build configuration list for PBXNativeTarget "APITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4775C3AD2D52144A00C573DF /* Debug */,
+				4775C3AE2D52144A00C573DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -667,6 +1019,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4775C3552D4F632200C573DF /* XCRemoteSwiftPackageReference "swift-collections" */;
 			productName = HeapModule;
+		};
+		4775C3B02D52146C00C573DF /* CodableWrappers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4775C34C2D4F61CB00C573DF /* XCRemoteSwiftPackageReference "CodableWrappers" */;
+			productName = CodableWrappers;
+		};
+		4775C3B22D52147000C573DF /* LetterCase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4775C34F2D4F61ED00C573DF /* XCRemoteSwiftPackageReference "LetterCase" */;
+			productName = LetterCase;
+		};
+		4775C3B42D52147400C573DF /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4775C3522D4F620900C573DF /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+		4775C3B62D52148700C573DF /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4775C3552D4F632200C573DF /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
