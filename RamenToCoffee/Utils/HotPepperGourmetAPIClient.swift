@@ -20,11 +20,11 @@ struct HotPepperGourmetAPIClient: APIClient {
     }
 
     let session: URLSessionProtocol
-    private let key: String = "a029724abd77ddd5"
     private let decoder = JSONDecoder()
+    private var apiKey: APIKey = .init()
 
     func data(path: String? = nil, parameters: Parameters? = nil) async throws -> Data {
-        let dictionary = try (parameters?.convertToDictionary() ?? [:]) + (key.convertToDictionary())
+        let dictionary = try (parameters?.convertToDictionary() ?? [:]) + (apiKey.convertToDictionary())
 
         let request = urlRequest(path: path, parameters: dictionary)
         logger.debug([
@@ -55,6 +55,10 @@ struct HotPepperGourmetAPIClient: APIClient {
             throw APIError.message(error.localizedDescription)
         }
     }
+}
+
+private struct APIKey: Encodable {
+    private let key: String = "a029724abd77ddd5"
 }
 
 extension APIClient where Self == HotPepperGourmetAPIClient {
