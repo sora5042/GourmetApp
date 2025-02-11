@@ -10,9 +10,9 @@ import Foundation
 
 struct GourmetSearchService {
     var gourmetSearchAPI: GourmetSearchAPI = .init(apiClient: .default)
-    
-    func fetchGourmet() async throws -> [GourmetSearch] {
-        let response = try await gourmetSearchAPI.get(.init())
+
+    func fetchGourmet(keyword: String, latitude: Double, longitude: Double) async throws -> [GourmetSearch] {
+        let response = try await gourmetSearchAPI.get(.init(keyword: keyword, lat: latitude, lng: longitude))
         return response.result.shop.map { shop in
             .init(
                 id: shop.id,

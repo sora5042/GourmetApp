@@ -24,7 +24,7 @@ public struct GourmetSearchAPI: APIEndpoint {
 extension GourmetSearchAPI {
     /// リクエスト用パラメータ
     public struct GetParam: Encodable {
-        public init(id: Int? = nil, name: String? = nil, name_kana: String? = nil, name_any: String? = nil, tel: Int? = nil, address: String? = nil, keyword: String? = nil, lat: Double? = nil, lng: Int? = nil, range: Int? = nil) {
+        public init(id: Int? = nil, name: String? = nil, name_kana: String? = nil, name_any: String? = nil, tel: Int? = nil, address: String? = nil, keyword: String? = nil, lat: Double? = nil, lng: Double? = nil, range: Int? = nil) {
             self.id = id
             self.name = name
             self.name_kana = name_kana
@@ -54,7 +54,7 @@ extension GourmetSearchAPI {
         /// 緯度
         public var lat: Double?
         /// 経度
-        public var lng: Int?
+        public var lng: Double?
         /// 範囲
         public var range: Int?
     }
