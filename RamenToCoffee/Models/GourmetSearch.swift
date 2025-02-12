@@ -13,8 +13,8 @@ struct GourmetSearch: Hashable {
     let logoImageURL: URL?
     let address: String
     let stationName: String
-    let lat: Int
-    let lng: Int
+    let lat: Double
+    let lng: Double
     let genreText: String
     let budgetText: String
     let budgetAverage: String

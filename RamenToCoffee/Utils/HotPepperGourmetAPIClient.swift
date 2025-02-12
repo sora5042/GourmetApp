@@ -24,9 +24,10 @@ struct HotPepperGourmetAPIClient: APIClient {
     private var apiKey: APIKey = .init()
 
     func data(path: String? = nil, parameters: Parameters? = nil) async throws -> Data {
-        let dictionary = try (parameters?.convertToDictionary() ?? [:]) + (apiKey.convertToDictionary())
+        var dictionary = try (parameters?.convertToDictionary() ?? [:]) + (apiKey.convertToDictionary())
 
-        let request = urlRequest(path: path, parameters: dictionary)
+        dictionary["format"] = "json"
+        var request = urlRequest(path: path, parameters: dictionary)
         logger.debug([
             "URL: \(baseURL) \(path ?? "")",
             "Params: \(String(describing: parameters))"

@@ -55,6 +55,8 @@ public class URLQueryBuilder {
                 return "\(currentKey)=\(self.queryString(with: int))"
             } else if let decimal = value as? Decimal {
                 return "\(currentKey)=\(self.queryString(with: decimal))"
+            } else if let decimal = value as? Double {
+                return "\(currentKey)=\(self.queryString(with: decimal))"
             } else if let queryRepresentable = value as? URLQueryRespresentable {
                 return "\(currentKey)=\(self.queryString(with: queryRepresentable))"
             } else if let array: [String] = value as? [String] {

@@ -13,11 +13,11 @@ struct GourmetSearchService {
 
     func fetchGourmet(keyword: String, latitude: Double, longitude: Double) async throws -> [GourmetSearch] {
         let response = try await gourmetSearchAPI.get(.init(keyword: keyword, lat: latitude, lng: longitude))
-        return response.result.shop.map { shop in
+        return response.results.shop.map { shop in
             .init(
                 id: shop.id,
                 name: shop.name,
-                logoImageURL: .init(string: shop.logo_image),
+                logoImageURL: URL(string: shop.logo_image),
                 address: shop.address,
                 stationName: shop.station_name,
                 lat: shop.lat,
@@ -25,9 +25,9 @@ struct GourmetSearchService {
                 genreText: shop.genre.name,
                 budgetText: shop.budget.name,
                 budgetAverage: shop.budget.average,
-                largeImageURL: .init(string: shop.photo.mobile.l),
-                midiumImageURL: .init(string: shop.photo.mobile.m),
-                smallImageURL: .init(string: shop.photo.mobile.s)
+                largeImageURL: URL(string: shop.photo?.mobile?.l ?? ""),
+                midiumImageURL: URL(string: shop.photo?.mobile?.m ?? ""),
+                smallImageURL: URL(string: shop.photo?.mobile?.s ?? "")
             )
         }
     }
