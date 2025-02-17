@@ -59,3 +59,49 @@ extension View {
         }
     }
 }
+
+extension View {
+    @MainActor
+    @ViewBuilder
+    func alert(_ error: Binding<Error?>) -> some View {
+        alert(
+            isPresented: .init(value: error),
+            title: "\(error.wrappedValue?.localizedDescription ?? "")",
+            message: ""
+        )
+    }
+}
+
+extension View {
+    func alert(isPresented: Binding<Bool>, title: Text, message: Text) -> some View {
+        alert(
+            title,
+            isPresented: isPresented
+        ) {
+            Button("キャンセル") { isPresented.wrappedValue = false }
+        } message: {
+            message
+        }
+    }
+    
+    func alert(isPresented: Binding<Bool>, title: LocalizedStringKey, message: LocalizedStringKey) -> some View {
+        alert(isPresented: isPresented, title: Text(title), message: Text(message))
+    }
+}
+
+// MARK: - Binding
+
+extension Binding where Value == Bool {
+    init(value: Binding<(some Any)?>) {
+        self.init(
+            get: {
+                value.wrappedValue != nil
+            },
+            set: {
+                if !$0 {
+                    value.wrappedValue = nil
+                }
+            }
+        )
+    }
+}

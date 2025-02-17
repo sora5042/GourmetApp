@@ -16,7 +16,11 @@ struct GourmetSearchView: View {
             SearchBar { text in
                 await viewModel.fetchGourmet(keyword: text)
             }
-            GourmetList(gourmetShops: viewModel.gourmets)
+            if viewModel.isNoGourmet {
+                noGourmetsView()
+            } else {
+                GourmetList(gourmetShops: viewModel.gourmets)
+            }
         }
         .padding(.top)
         .padding(.horizontal)
@@ -38,7 +42,17 @@ struct GourmetSearchView: View {
                 break
             }
         }
+        .alert($viewModel.error)
         .loading(isPresented: viewModel.isLoading)
+    }
+    
+    private func noGourmetsView() -> some View {
+        ScrollView {
+            Text("条件に合うお店が見つかりませんでした")
+                .padding(.top)
+                .padding(.top)
+                .alignment(.center)
+        }
     }
 }
 

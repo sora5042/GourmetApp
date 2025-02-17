@@ -22,7 +22,13 @@ final class GourmetSearchViewModel: NSObject, ObservableObject, CLLocationManage
     private(set) var isLoading: Bool = false
 
     @Published
+    private(set) var isNoGourmet: Bool = false
+
+    @Published
     private(set) var gourmets: [Gourmet] = []
+
+    @Published
+    var error: Error?
 
     private var isFirstFetch: Bool = false
 
@@ -43,7 +49,7 @@ final class GourmetSearchViewModel: NSObject, ObservableObject, CLLocationManage
         if !isFirstFetch {
             isFirstFetch = true
             Task {
-                await fetchGourmet(keyword: "")
+                await fetchGourmet()
             }
         }
     }
@@ -62,7 +68,7 @@ final class GourmetSearchViewModel: NSObject, ObservableObject, CLLocationManage
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Location manager failed with error: \(error.localizedDescription)")
+        self.error = error
     }
 
     func loadLocation() async {
@@ -98,9 +104,10 @@ final class GourmetSearchViewModel: NSObject, ObservableObject, CLLocationManage
 
         do {
             let gourmets = try await gourmetSearchService.fetchGourmet(keyword: keyword.isEmpty ? "グルメ" : keyword, latitude: coordinate.latitude, longitude: coordinate.longitude)
+            isNoGourmet = gourmets.isEmpty
             self.gourmets = gourmets.map { .init(gourmetSearch: $0) }
         } catch {
-            print(error)
+            self.error = error
         }
     }
 }
