@@ -38,6 +38,7 @@ struct GourmetSearchView: View {
                 break
             }
         }
+        .loading(isPresented: viewModel.isLoading)
     }
 }
 

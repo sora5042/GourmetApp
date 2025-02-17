@@ -9,7 +9,7 @@ import CoreLocation
 import Foundation
 
 final class GourmetSearchViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
-    let gourmetSearchService: GourmetSearchService
+    private let gourmetSearchService: GourmetSearchService
     private let locationManager: CLLocationManager
 
     @Published
@@ -19,8 +19,11 @@ final class GourmetSearchViewModel: NSObject, ObservableObject, CLLocationManage
     var coordinate: CLLocationCoordinate2D?
 
     @Published
+    private(set) var isLoading: Bool = false
+
+    @Published
     private(set) var gourmets: [Gourmet] = []
-    
+
     private var isFirstFetch: Bool = false
 
     init(
@@ -46,7 +49,7 @@ final class GourmetSearchViewModel: NSObject, ObservableObject, CLLocationManage
     }
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        DispatchQueue.main.async {
+        Task {
             self.authorizationStatus = status
         }
     }
@@ -61,7 +64,7 @@ final class GourmetSearchViewModel: NSObject, ObservableObject, CLLocationManage
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Location manager failed with error: \(error.localizedDescription)")
     }
-    
+
     func loadLocation() async {
         if CLLocationManager.locationServicesEnabled() {
             locationManager.requestLocation()
@@ -90,6 +93,9 @@ final class GourmetSearchViewModel: NSObject, ObservableObject, CLLocationManage
             await loadLocation()
             return
         }
+        isLoading = true
+        defer { isLoading = false }
+
         do {
             let gourmets = try await gourmetSearchService.fetchGourmet(keyword: keyword.isEmpty ? "グルメ" : keyword, latitude: coordinate.latitude, longitude: coordinate.longitude)
             self.gourmets = gourmets.map { .init(gourmetSearch: $0) }
