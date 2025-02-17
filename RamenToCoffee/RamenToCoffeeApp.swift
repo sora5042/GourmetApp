@@ -13,7 +13,7 @@ let logger = Logger()
 struct RamenToCoffeeApp: App {
     var body: some Scene {
         WindowGroup {
-            GourmetSearchView()
+            GourmetSearchView(viewModel: .init())
         }
     }
 }

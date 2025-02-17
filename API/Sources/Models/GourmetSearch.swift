@@ -60,7 +60,6 @@ extension GourmetSearch {
     
     public struct Mobile: Decodable {
         public let l: String?
-        public let m: String?
         public let s: String?
     }
 }

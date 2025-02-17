@@ -17,16 +17,19 @@ struct GourmetSearchService {
             .init(
                 id: shop.id,
                 name: shop.name,
-                logoImageURL: URL(string: shop.logo_image),
+                catchText: shop.catch,
+                logoImageURL: URL(string: shop.photo?.mobile?.l ?? ""),
                 address: shop.address,
                 stationName: shop.station_name,
+                access: shop.mobile_access,
                 lat: shop.lat,
                 lng: shop.lng,
                 genreText: shop.genre.name,
                 budgetText: shop.budget.name,
                 budgetAverage: shop.budget.average,
+                open: shop.open,
+                close: shop.close,
                 largeImageURL: URL(string: shop.photo?.mobile?.l ?? ""),
-                midiumImageURL: URL(string: shop.photo?.mobile?.m ?? ""),
                 smallImageURL: URL(string: shop.photo?.mobile?.s ?? "")
             )
         }
