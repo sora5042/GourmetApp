@@ -20,7 +20,7 @@ extension View {
     }
 
     @MainActor
-    func loading(isPresented: Bool, dimmed: Bool = false, title: LocalizedStringKey) -> some View {
+    func loading(isPresented: Bool, dimmed: Bool = false, title: String) -> some View {
         disabled(isPresented, dimmed: dimmed)
             .overlay {
                 if isPresented {
@@ -64,11 +64,22 @@ extension View {
     @MainActor
     @ViewBuilder
     func alert(_ error: Binding<Error?>) -> some View {
-        alert(
-            isPresented: .init(value: error),
-            title: "\(error.wrappedValue?.localizedDescription ?? "")",
-            message: ""
-        )
+        switch error.wrappedValue {
+        case let e as HotPepperGourmetAPIError:
+            alert(
+                isPresented: .init(value: error),
+                title: "\(e.localizedDescription)",
+                message: ""
+            )
+        case let e?:
+            alert(
+                isPresented: .init(value: error),
+                title: "\(e.localizedDescription)",
+                message: ""
+            )
+        default:
+            self
+        }
     }
 }
 
@@ -83,8 +94,8 @@ extension View {
             message
         }
     }
-    
-    func alert(isPresented: Binding<Bool>, title: LocalizedStringKey, message: LocalizedStringKey) -> some View {
+
+    func alert(isPresented: Binding<Bool>, title: String, message: String) -> some View {
         alert(isPresented: isPresented, title: Text(title), message: Text(message))
     }
 }
