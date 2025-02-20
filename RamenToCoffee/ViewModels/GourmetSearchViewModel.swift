@@ -123,6 +123,8 @@ extension GourmetSearchViewModel {
         var open: String?
         var close: String?
         var logoImageURL: URL?
+        var openGoogleMapURLString: String?
+        var openiOSMapURLString: String?
     }
 }
 
@@ -137,7 +139,9 @@ extension GourmetSearchViewModel.Gourmet {
             budgetText: gourmetSearch.budgetText,
             open: gourmetSearch.open,
             close: gourmetSearch.close,
-            logoImageURL: gourmetSearch.logoImageURL
+            logoImageURL: gourmetSearch.logoImageURL,
+            openGoogleMapURLString: "comgooglemaps://?center=\(gourmetSearch.lat),\(gourmetSearch.lng)&zoom=15&q=\(gourmetSearch.lat),\(gourmetSearch.lng)",
+            openiOSMapURLString: "http://maps.apple.com/?ll=\(gourmetSearch.lat),\(gourmetSearch.lng)&q=\(gourmetSearch.lat),\(gourmetSearch.lng)"
         )
     }
 }

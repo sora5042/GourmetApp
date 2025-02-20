@@ -114,7 +114,9 @@ private struct GourmetList: View {
                     budgetText: gourmetShop.budgetText ?? "",
                     open: gourmetShop.open ?? "",
                     close: gourmetShop.close ?? "",
-                    logoImageURL: gourmetShop.logoImageURL
+                    logoImageURL: gourmetShop.logoImageURL,
+                    openGoogleMapURLString: gourmetShop.openGoogleMapURLString ?? "",
+                    openiOSMapURLString: gourmetShop.openiOSMapURLString ?? ""
                 )
             }
         }
@@ -131,6 +133,11 @@ private struct Row: View {
     var open: String
     var close: String
     var logoImageURL: URL?
+    var openGoogleMapURLString: String
+    var openiOSMapURLString: String
+
+    @Environment(\.openURL)
+    private var openURL
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -142,12 +149,12 @@ private struct Row: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(height:  200)
                         .clipped()
-                case .failure(_):
+                case .failure:
                     Image(systemName: "photo")
                         .frame(height: 200)
                 case .empty:
                     ProgressView()
-                @unknown default:
+                default:
                     EmptyView()
                 }
             }
@@ -173,14 +180,45 @@ private struct Row: View {
                     Text(access)
                 }
                 Label(budgetText, systemImage: "yensign")
+                Button {
+                    openGoogleMap()
+                } label: {
+                    HStack {
+                        Image(systemName: "map")
+                        Text("マップアプリで開く")
+                    }
+                    .padding(10)
+                    .background(.white)
+                    .cornerRadius(10)
+                    .shadow(color: .gray.opacity(0.5), radius: 5, x: 0, y: 5)
+                }
             }
             .font(.footnote)
             .padding()
         }
         .background(.white)
+        .foregroundStyle(.black)
         .cornerRadius(16)
         .shadow(color: .gray.opacity(0.2), radius: 5, x: 1, y: 5)
         .padding(5)
+    }
+
+    private func openGoogleMap() {
+        if let url = URL(string: openGoogleMapURLString) {
+            openURL(url) { success in
+                if success {
+                    return
+                } else {
+                    if let url = URL(string: openiOSMapURLString) {
+                        openURL(url) { success in
+                            if success {
+                                return
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
